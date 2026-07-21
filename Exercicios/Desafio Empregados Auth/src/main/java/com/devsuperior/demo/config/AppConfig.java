@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.config;
+package com.devsuperior.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

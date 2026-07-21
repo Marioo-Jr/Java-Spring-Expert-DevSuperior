@@ -1,14 +1,15 @@
-package com.devsuperior.dscatalog.config.customgrant;
+package com.devsuperior.demo.config.customgrant;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.server.authorization.authentication.OAuth2AuthorizationGrantAuthenticationToken;
+
+import io.micrometer.common.lang.Nullable;
 
 public class CustomPasswordAuthenticationToken extends OAuth2AuthorizationGrantAuthenticationToken {
 
