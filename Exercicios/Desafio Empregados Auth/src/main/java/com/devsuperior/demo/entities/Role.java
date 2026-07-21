@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_role")
-public class Role{
+public class Role implements GrantedAuthority{
 
 
     @Id
@@ -33,7 +33,7 @@ public class Role{
     }
 
 
-    
+    @Override
     public String getAuthority() {
         return authority;
     }

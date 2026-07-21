@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.resources.exceptions;
+package com.devsuperior.demo.controllers.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;
