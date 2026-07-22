@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.devsuperior.bds04.controllers.CityControllerIT
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.466 s -- in com.devsuperior.bds04.controllers.CityControllerIT
