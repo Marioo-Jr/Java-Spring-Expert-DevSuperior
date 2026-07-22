@@ -30,3 +30,16 @@ Download them from this folder.
     - Request GET /products (should return products)
     - Request GET /products/1 (should return product)
     - Request POST /products {"name":"Tablet"} (should insert product) 
+
+
+Authorization Server
+Habilitar Authorization server
+Configurar token (codificação, formato, assinatura)
+Configurar autenticação / password encoder
+Registrar aplicação cliente
+
+Resource Server
+Configurar controle de acesso aos recursos
+Configurar CSRF, CORS
+Configurar token
+Liberar H2 Console no modo teste
