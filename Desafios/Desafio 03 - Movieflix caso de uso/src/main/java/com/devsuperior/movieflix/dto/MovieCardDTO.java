@@ -1,5 +1,12 @@
 package com.devsuperior.movieflix.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import com.devsuperior.movieflix.entities.Genre;
+import com.devsuperior.movieflix.entities.Movie;
+
 public class MovieCardDTO {
 
     private Long id;
@@ -8,6 +15,34 @@ public class MovieCardDTO {
     private Integer year;
     private String imgUrl;
 
+    private List<GenreDTO> genres = new ArrayList<>(); 
+
+    public MovieCardDTO (){}
+
+    public MovieCardDTO(Long id, String title, String subTitle, Integer year, String imgUrl) {
+        this.id = id;
+        this.title = title;
+        this.subTitle = subTitle;
+        this.year = year;
+        this.imgUrl = imgUrl;
+    }
+
+    
+
+    public MovieCardDTO(Movie entity) {
+        this.id = entity.getId();
+        this.title = entity.getTitle();
+        this.subTitle = entity.getSubTitle();
+        this.year = entity.getYear();
+        this.imgUrl = entity.getImgUrl();
+    }
+
+   
+
+    
+
+
+    
     public Long getId() {
         return id;
     }
@@ -46,5 +81,13 @@ public class MovieCardDTO {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public List<GenreDTO> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<GenreDTO> genres) {
+        this.genres = genres;
     }
 }
