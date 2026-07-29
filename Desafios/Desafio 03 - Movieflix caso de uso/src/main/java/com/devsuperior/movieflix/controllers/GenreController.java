@@ -19,7 +19,7 @@ public class GenreController {
     @Autowired
     private GenreService service;
 
-    @PreAuthorize("hasAnyRole('ROLE_MEMBER', 'ROLE_VISITOR')")
+    @PreAuthorize("hasAnyRole('MEMBER', 'VISITOR')")
     @GetMapping
 	public ResponseEntity<List<GenreDTO>> findAll() {
 		List<GenreDTO> list = service.findAll();		

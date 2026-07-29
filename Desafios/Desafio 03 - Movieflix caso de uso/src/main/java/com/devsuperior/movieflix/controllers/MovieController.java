@@ -21,7 +21,7 @@ public class MovieController {
 
     @Autowired MovieService service;
 
-    @PreAuthorize("hasAnyRole('ROLE_MEMBER','ROLE_VISITOR')")
+    @PreAuthorize("hasAnyRole('MEMBER','VISITOR')")
     @GetMapping(value = "/{id}")
 	public ResponseEntity<MovieDetailsDTO> findById(@PathVariable Long id) {
 		MovieDetailsDTO dto = service.findById(id);
@@ -29,7 +29,7 @@ public class MovieController {
 	}
 
 
-    @PreAuthorize("hasAnyRole('ROLE_MEMBER','ROLE_VISITOR')")
+    @PreAuthorize("hasAnyRole('MEMBER','VISITOR')")
     @GetMapping
     public ResponseEntity<Page<MovieCardDTO>> findByGenre(
         @RequestParam(value = "name", defaultValue = "") String title,

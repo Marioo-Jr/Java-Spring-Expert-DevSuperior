@@ -23,7 +23,7 @@ public class ReviewController {
     @Autowired
     private ReviewService service;
 
-    @PreAuthorize("hasRole('ROLE_MEMBER')")
+    @PreAuthorize("hasRole('MEMBER')")
     @PostMapping
     public ResponseEntity<ReviewDTO> insert(@Valid @RequestBody ReviewDTO dto) {
         ReviewDTO newDto = service.insert(dto);
