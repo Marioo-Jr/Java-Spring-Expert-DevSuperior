@@ -32,7 +32,6 @@ public class MovieController {
     @PreAuthorize("hasAnyRole('MEMBER','VISITOR')")
     @GetMapping
     public ResponseEntity<Page<MovieCardDTO>> findByGenre(
-        @RequestParam(value = "name", defaultValue = "") String title,
         @RequestParam(value = "genreId", defaultValue = "0") Long genreId,
         Pageable pageable) {
     Page<MovieCardDTO> dto = service.findByGenre(genreId, pageable);

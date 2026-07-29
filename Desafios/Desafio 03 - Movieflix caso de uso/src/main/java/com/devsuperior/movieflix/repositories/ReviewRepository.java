@@ -6,4 +6,5 @@ import com.devsuperior.movieflix.entities.Review;
 
 public interface ReviewRepository extends JpaRepository<Review, Long>{
 
+	Review findByMovieIdAndUserId(Long movieId, Long userId);
 }

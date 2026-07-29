@@ -1,5 +1,8 @@
 package com.devsuperior.movieflix.dto;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.devsuperior.movieflix.entities.Movie;
 
 public class MovieDetailsDTO {
@@ -11,11 +14,12 @@ public class MovieDetailsDTO {
     private String imgUrl;
     private String synopsis;
     private GenreDTO genre;
+    private List<ReviewDTO> reviews;
 
-    
+
 
     public MovieDetailsDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis,
-            GenreDTO genre) {
+            GenreDTO genre, List<ReviewDTO> reviews) {
         this.id = id;
         this.title = title;
         this.subTitle = subTitle;
@@ -23,6 +27,7 @@ public class MovieDetailsDTO {
         this.imgUrl = imgUrl;
         this.synopsis = synopsis;
         this.genre = genre;
+        this.reviews = reviews;
     }
 
     public MovieDetailsDTO(Movie entity) {
@@ -33,6 +38,7 @@ public class MovieDetailsDTO {
         imgUrl = entity.getImgUrl();
         synopsis = entity.getSynopsis();
         genre = new GenreDTO(entity.getGenre());
+        reviews = entity.getReviews().stream().map(ReviewDTO::new).collect(Collectors.toList());
     }
 
     public Long getId() {
@@ -89,5 +95,13 @@ public class MovieDetailsDTO {
 
 	public void setGenre(GenreDTO genre) {
 		this.genre = genre;
+	}
+
+	public List<ReviewDTO> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<ReviewDTO> reviews) {
+		this.reviews = reviews;
 	}
 }
